@@ -24,25 +24,6 @@ const darkModeToggleHandler = e => {
 // bind the event
 darkModeToggle.addEventListener('change', darkModeToggleHandler)
 
-// //--------------- markup effect-------------------
-// // 選取點擊範圍
-const BOX = document.querySelector('.checkbox')
-const ROW = BOX.parentElement.parentElement
-const checkBoxChecked = e => {
-  // 被點到後會addClass
-  if (BOX.checked) {
-    ROW.classList.add('table__row--markup')
-  } else {
-    ROW.classList.remove('table__row--markup')
-  }
-}
-
-BOX.addEventListener('click', checkBoxChecked)
-
-
-
-// 原本的CODE,只會執行一次就就不會再次執行
-
 // --------------- markup effect-------------------
 // 設立選取範圍
 const BOX = document.querySelectorAll('input[type="checkbox"]')
@@ -52,7 +33,7 @@ const allRow = document.querySelectorAll('.table__row')
 function selectRow () {
   for (let i = 2; i < BOX.length; i++) {
     BOX[i].onclick = function () {
-      if (BOX[i].checked) { 
+      if (BOX[i].checked) {
         this.parentElement.parentElement.classList.add('table__row--markup')
       } else {
         this.parentElement.parentElement.classList.remove('table__row--markup')
